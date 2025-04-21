@@ -13,7 +13,7 @@ from utils.label_encoder import encode, decode
 from utils.result_eval import print_information
 
 
-def get_data_frames(file_path='data/readability/data_V2.0', mode='default', exp_type='C', append_column=None):
+def get_data_frames(file_path='data/readability/DARES2.0', mode='default', exp_type='C', append_column=None):
     sampling_random_state = 777
 
     train_df = pd.read_csv(f'{file_path}/train.csv', sep='\t')
@@ -84,30 +84,30 @@ def run(args):
     if args.run_mode == "test":
         train_df, test_df, validation_df = get_data_frames(mode='test')
     elif args.run_mode == "categorised_test":
-        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/data_V2.0', mode='test',
+        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/DARES2.0', mode='test',
                                                            exp_type='C')
     elif args.run_mode == "balanced":
         train_df, test_df, validation_df = get_balanced_data_frames()
     elif args.run_mode == "raw":
-        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/data_V2.0', exp_type='F')
+        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/DARES2.0', exp_type='F')
     elif args.run_mode == "raw_cat":
-        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/data_V2.0', exp_type='C')
+        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/DARES2.0', exp_type='C')
     elif args.run_mode == "append_word":
         train_df, test_df, validation_df = get_data_frames(append_column=args.append_column, exp_type='F')
     elif args.run_mode == "append_word_categorised":
-        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/data_V2.0',
+        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/DARES2.0',
                                                            append_column=args.append_column, exp_type='C')
     elif args.run_mode == "append_filename":
-        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/data_V2.0',
+        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/DARES2.0',
                                                            append_column=args.append_column, exp_type='F')
     elif args.run_mode == "append_filename_categorised":
-        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/data_V2.0',
+        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/DARES2.0',
                                                            append_column=args.append_column, exp_type='C')
     elif args.run_mode == "word_file_cat":
-        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/data_V2.0',
+        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/DARES2.0',
                                                            append_column=args.append_column, exp_type='C')
     elif args.run_mode == "word_file":
-        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/data_V2.0',
+        train_df, test_df, validation_df = get_data_frames(file_path='data/readability/DARES2.0',
                                                            append_column=args.append_column, exp_type='F')
     else:
         train_df, test_df, validation_df = get_data_frames()

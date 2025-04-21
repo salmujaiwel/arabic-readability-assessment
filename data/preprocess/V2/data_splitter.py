@@ -28,4 +28,4 @@ def split_data(path, filename):
 
 
 if __name__ == '__main__':
-    split_data('data/readability/data_V2.0', 'Paper_Dataset.xlsx')
+    split_data('data/readability/DARES2.0', 'Paper_Dataset.xlsx')
