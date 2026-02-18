@@ -75,7 +75,7 @@ append_filename_categorised     : append subject to the categorised data experim
 }
 ```
 
-## Citation DARES2.0
+## Citation DARES1.0
 ```bash
 @article{almujaiwel2025complex,
   title={Complex Concept-Based Readability Estimation from Arabic Curriculum},
